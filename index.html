@@ -8,20 +8,28 @@
 </head>
 <body>
     <header>
-        <h1>Movie Explorer</h1>
-        <form>
-            <input type="text" placeholder="Search for movies...">
-            <button>search</button>
+        <h1 id="title">Movie Explorer</h1>
+        <form id="searchForm">
+            <input id="searchBar" type="text" placeholder="Search for movies...">
+            <button id="btn">🔍search</button>
         </form>
     </header>
     <main>
 
         <div id="cardContainer">
             <div class="movie-card">
-                <img src="" alt="Movie Poster">
-                <div>
+                <img src="assetes/poster.jpg" alt="Movie Poster">
+                <div class="movie-info">
                     <h2>Interstellar</h2>
-                    <p>...</p>
+                    <p>In a dystopian future where Earth
+                         has become near-uninhabitable,
+                          a team of astronauts embark on
+                           a mission to find a new home
+                            for humanity. In the near future
+                             around the American Midwest, Cooper,
+                              an ex-science engineer and pilot,
+                               is tied to his farming land
+                                with his daughter Murph and son Tom.</p>
                 </div>
             </div>
         </div>
@@ -30,7 +38,7 @@
         
     </main>
     <footer>
-        <div>Movie Explorer • Built with HTML, CSS and JavaScript</div>
+        <div id="footerText">Movie Explorer • Built with HTML, CSS and JavaScript</div>
     </footer>
 </body>
 </html>
