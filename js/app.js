@@ -22,11 +22,10 @@ async function getData() {
         const response = await fetch(url);
         const data = await response.json();
         const movie = data.results[0];
-        console.log(movie);
-        movieTitle.textContent = movie.title;
-        text.textContent = movie.overview;
-        language.textContent =`Language: ${movie.original_language}`;
-        poster.src = `https:/image.tmdb.org/t/p/w500${movie.poster_path}`;
+        movieTitle.textContent = await movie.title;
+        text.textContent = await movie.overview;
+        language.textContent = await `Language: ${movie.original_language}`;
+        poster.src = await `https:/image.tmdb.org/t/p/w500${movie.poster_path}`;
     }
     catch(error) {
         console.log(error);
