@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1 id="title">Movie Explorer</h1>
+        <h1 id="webTitle">Movie Explorer</h1>
         <form id="searchForm">
             <input id="searchBar" type="text" placeholder="Search for movies...">
             <button id="btn">🔍search</button>
@@ -18,10 +18,11 @@
 
         <div id="cardContainer">
             <div class="movie-card">
-                <img src="assetes/poster.jpg" alt="Movie Poster">
+                <img id="poster" src="assetes/poster.jpg" alt="Movie Poster">
                 <div class="movie-info">
-                    <h2>Interstellar</h2>
-                    <p>In a dystopian future where Earth
+                    <h2 id="title">Interstellar</h2>
+                    <h4 id="lang"></h4>
+                    <p id="paragraph">In a dystopian future where Earth
                          has become near-uninhabitable,
                           a team of astronauts embark on
                            a mission to find a new home
@@ -40,5 +41,6 @@
     <footer>
         <div id="footerText">Movie Explorer • Built with HTML, CSS and JavaScript</div>
     </footer>
+    <script src="js/app.js"></script>
 </body>
 </html>
