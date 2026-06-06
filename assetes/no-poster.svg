@@ -1,0 +1,26 @@
+<svg width="500" height="750" viewBox="0 0 500 750" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">No poster available</title>
+  <desc id="desc">Placeholder image for missing movie posters</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d3748"/>
+      <stop offset="100%" stop-color="#1a202c"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="500" height="750" rx="30" ry="30" fill="url(#bg)" />
+  <rect x="40" y="40" width="420" height="620" rx="20" ry="20" fill="#1a202c" stroke="#4a5568" stroke-width="8" />
+  <rect x="70" y="90" width="360" height="300" rx="16" ry="16" fill="#2d3748" />
+  <g transform="translate(90,440)">
+    <rect x="0" y="0" width="320" height="20" rx="10" ry="10" fill="#4a5568" />
+    <rect x="0" y="40" width="260" height="20" rx="10" ry="10" fill="#4a5568" />
+    <rect x="0" y="80" width="180" height="20" rx="10" ry="10" fill="#4a5568" />
+  </g>
+  <g transform="translate(140,170)">
+    <circle cx="90" cy="90" r="70" fill="#4a5568" />
+    <path d="M55 120 L95 160" stroke="#cbd5e0" stroke-width="12" stroke-linecap="round" />
+    <circle cx="90" cy="90" r="45" fill="none" stroke="#cbd5e0" stroke-width="10" />
+    <circle cx="90" cy="90" r="12" fill="#cbd5e0" />
+  </g>
+  <text x="250" y="540" fill="#e2e8f0" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" text-anchor="middle">No Poster</text>
+  <text x="250" y="595" fill="#a0aec0" font-family="Arial, Helvetica, sans-serif" font-size="28" text-anchor="middle">Not Found</text>
+</svg>

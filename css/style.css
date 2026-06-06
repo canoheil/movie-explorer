@@ -44,6 +44,28 @@ main {
     box-shadow: 0 0 15px rgba(255, 211, 105, 0.9);
 }
 
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.suggestion-item img {
+    width: 40px;    
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.suggestion-item:hover {
+    background-color: rgba(255,255,255,.1);
+    border-radius: 10px;
+}
+
 #btn {
     border: none;
     border-radius: 20px;
