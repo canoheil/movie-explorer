@@ -7,6 +7,8 @@ const movieTitle = document.getElementById('title');
 const text = document.getElementById('paragraph');
 const language = document.getElementById('lang');
 const rating = document.getElementById('rating');
+const year = document.getElementById('year');
+const loading = document.getElementById('loading');
 
 
 button.addEventListener('click', (e) => {
@@ -14,8 +16,15 @@ button.addEventListener('click', (e) => {
     getData();
 });
 
-let timeoutId;
+searchBar.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        suggestions.innerHTML = '';
+        getData();
+    }
+});
 
+let timeoutId;
 searchBar.addEventListener('input', (e) => {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
@@ -28,7 +37,10 @@ async function getSuggestions() {
     suggestions.innerHTML = '';
 
     const movieName = searchBar.value.trim();
-    if (!movieName) return;
+    if (!movieName) {
+        suggestions.innerHTML = '';
+        return;
+    }
 
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieName)}`
 
@@ -65,6 +77,8 @@ async function getData() {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieName)}`
 
     try {
+
+        loading.style.display = 'block';
         const response = await fetch(url);
         const data = await response.json();
 
@@ -73,6 +87,7 @@ async function getData() {
             text.style.display = 'none';
             language.style.display = 'none';
             rating.style.display = 'none';
+            year.style.display = 'none';
             poster.src = 'assetes/no-poster.svg';
             return;
         }
@@ -90,12 +105,24 @@ async function getData() {
         rating.textContent = `⭐ Rating: ${movie.vote_average}`;
         rating.style.display = 'block';
 
+        year.textContent = `📅 Year: ${movie.release_date.slice(0,4)}` || 'Unknown';
+        year.style.display = 'block';
+
         poster.src = movie.poster_path
             ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
             : 'assetes/no-poster.svg';
+        poster.onerror = () => {
+            poster.src = 'assetes/no-poster.svg';
+        }
+
+            loading.style.display = 'none';
     }
     catch(error) {
         console.log(error);
+        loading.style.display = 'none';
+    }
+    finally {
+        loading.style.display = 'none';
     }
 }
 

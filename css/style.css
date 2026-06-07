@@ -26,10 +26,21 @@ header, main {
 
 main {
     flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    position: relative;
+    z-index: 10;
 }
 
 #title {
     font-family: "Cinzel", serif;
+}
+
+#searchForm {
+    position: relative;
 }
 
 #searchBar {
@@ -42,6 +53,23 @@ main {
 #searchBar:focus {
     border: 1px solid #393E46;
     box-shadow: 0 0 15px rgba(255, 211, 105, 0.9);
+}
+
+#loading {
+    display: none;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(57,62,70,.8);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
 }
 
 .suggestion-item {
